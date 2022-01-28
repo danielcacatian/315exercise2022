@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RotatorScript : MonoBehaviour
 {
@@ -26,12 +27,13 @@ public class RotatorScript : MonoBehaviour
         }
     }
 
-    public void Rotate1()
+    public void Rotate1(/* InputAction.CallbackContext context*/)
     {
+        Debug.Log("input detected");
         this.GetComponent<Transform>().Rotate(0, RotationSpeed, 0);
     }
 
-    public void Rotate2()
+    public void Rotate2(/* InputAction.CallbackContext context*/)
     {
         this.GetComponent<Transform>().Rotate(0, -RotationSpeed, 0);
     }
